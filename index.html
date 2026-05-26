@@ -459,7 +459,11 @@ async function loadChannels() {
   let base = EMBEDDED_CHANNELS;
   try {
     const res = await fetch(MASTER_JSON_PATH + '?t=' + Date.now());
-    if (res.ok) base = await res.json();
+    if (res.ok) {
+      const data = await res.json();
+      // FIX: Check if it's the new segmented JSON or the old standard array
+      base = Array.isArray(data) ? data : (data.all_raw || EMBEDDED_CHANNELS);
+    }
   } catch(e) { /* use embedded */ }
 
   // Apply local edits
