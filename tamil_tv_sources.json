@@ -265,14 +265,6 @@
       "category": "Entertainment"
     },
     {
-      "name": "Shalini TV",
-      "slug": "shalini-tv",
-      "url": "http://ipcloud.live:8080/shalinitv/shalinitv/index.m3u8",
-      "type": "m3u8",
-      "status": "working",
-      "category": "Entertainment"
-    },
-    {
       "name": "Malar TV",
       "slug": "malar-tv",
       "url": "https://cdn-3.pishow.tv/live/473/master.m3u8",
@@ -465,6 +457,14 @@
       "category": "Entertainment"
     },
     {
+      "name": "Kumari TV",
+      "slug": "kumari-tv",
+      "url": "https://rtmp.applelive.in/gvkumaritv/gvkumaritv/index.m3u8",
+      "type": "m3u8",
+      "status": "working",
+      "category": "Entertainment"
+    },
+    {
       "name": "Prime TV",
       "slug": "prime-tv",
       "url": "https://live.applelive.in/primetv/primetv/index.m3u8",
@@ -577,6 +577,22 @@
       "category": "Entertainment"
     },
     {
+      "name": "Harin TV",
+      "slug": "harin-tv",
+      "url": "https://ipcloud.live/harintv/harintvhd/index.m3u8",
+      "type": "m3u8",
+      "status": "working",
+      "category": "Entertainment"
+    },
+    {
+      "name": "Time TV",
+      "slug": "time-tv",
+      "url": "https://live.olidigital.in/timetv/timetv/tracks-v1a1/mono.m3u8",
+      "type": "m3u8",
+      "status": "working",
+      "category": "Entertainment"
+    },
+    {
       "name": "Phoenix TV Tamil",
       "slug": "phoenix-tv-tamil",
       "url": "https://stream.onecloudlive.in/phoenixtv/phoenixtv/index.m3u8",
@@ -649,6 +665,14 @@
       "category": "Entertainment"
     },
     {
+      "name": "Isai TV",
+      "slug": "isai-tv",
+      "url": "https://server.sscloud7.in/isaihd/isaihd/index.m3u8",
+      "type": "m3u8",
+      "status": "working",
+      "category": "Music"
+    },
+    {
       "name": "Dharshan TV",
       "slug": "dharshan-tv",
       "url": "https://galaxyott.live/hls/dharshantv.m3u8",
@@ -671,6 +695,14 @@
       "type": "m3u8",
       "status": "working",
       "category": "Entertainment"
+    },
+    {
+      "name": "Sachin TV Music",
+      "slug": "sachin-tv-music",
+      "url": "https://ipcloud.live/sachintv/musichd/index.m3u8",
+      "type": "m3u8",
+      "status": "working",
+      "category": "Music"
     },
     {
       "name": "EET TV",
@@ -935,15 +967,6 @@
       "type": "mpd",
       "status": "working",
       "category": "Entertainment"
-    },
-    {
-      "name": "Thanthi TV",
-      "slug": "custom-thanthi-tv-1779646726592",
-      "url": "https://www.youtube.com/embed/rCra_7vhDlY?si=CSirX8RMVD_PoFLn",
-      "type": "embed",
-      "custom": true,
-      "status": "working",
-      "category": "News"
     },
     {
       "name": "24x7 Live Tamil Songs",
@@ -1286,6 +1309,14 @@
       "category": "Entertainment"
     },
     {
+      "name": "Shalini TV",
+      "slug": "shalini-tv",
+      "url": "http://ipcloud.live:8080/shalinitv/shalinitv/index.m3u8",
+      "type": "m3u8",
+      "status": "broken",
+      "category": "Entertainment"
+    },
+    {
       "name": "Bharathi TV",
       "slug": "bharathi-tv",
       "url": "https://server.sscloud7.in/live/bharathitv/tracks-v1a1/mono.m3u8",
@@ -1430,14 +1461,6 @@
       "category": "Entertainment"
     },
     {
-      "name": "Kumari TV",
-      "slug": "kumari-tv",
-      "url": "https://rtmp.applelive.in/gvkumaritv/gvkumaritv/index.m3u8",
-      "type": "m3u8",
-      "status": "broken",
-      "category": "Entertainment"
-    },
-    {
       "name": "MP TV",
       "slug": "mp-tv",
       "url": "https://stream.sscloud7.in/live/mptv/index.m3u8",
@@ -1489,22 +1512,6 @@
       "name": "Nila TV Nellai",
       "slug": "nila-tv-nellai",
       "url": "https://ipcloud.live/nilatvnellai/nilahd/index.m3u8",
-      "type": "m3u8",
-      "status": "broken",
-      "category": "Entertainment"
-    },
-    {
-      "name": "Harin TV",
-      "slug": "harin-tv",
-      "url": "https://ipcloud.live/harintv/harintvhd/index.m3u8",
-      "type": "m3u8",
-      "status": "broken",
-      "category": "Entertainment"
-    },
-    {
-      "name": "Time TV",
-      "slug": "time-tv",
-      "url": "https://live.olidigital.in/timetv/timetv/tracks-v1a1/mono.m3u8",
       "type": "m3u8",
       "status": "broken",
       "category": "Entertainment"
@@ -1582,28 +1589,12 @@
       "category": "Entertainment"
     },
     {
-      "name": "Isai TV",
-      "slug": "isai-tv",
-      "url": "https://server.sscloud7.in/isaihd/isaihd/index.m3u8",
-      "type": "m3u8",
-      "status": "broken",
-      "category": "Music"
-    },
-    {
       "name": "Britain Tamil Bhakthi TV",
       "slug": "britain-tamil-bhakthi-tv",
       "url": "https://stream.onecloudlive.in/britaintamil/britaintamil/index.m3u8",
       "type": "m3u8",
       "status": "broken",
       "category": "Devotional"
-    },
-    {
-      "name": "Sachin TV Music",
-      "slug": "sachin-tv-music",
-      "url": "https://ipcloud.live/sachintv/musichd/index.m3u8",
-      "type": "m3u8",
-      "status": "broken",
-      "category": "Music"
     },
     {
       "name": "Dhoni TV HD",
@@ -2613,7 +2604,7 @@
       "slug": "shalini-tv",
       "url": "http://ipcloud.live:8080/shalinitv/shalinitv/index.m3u8",
       "type": "m3u8",
-      "status": "working",
+      "status": "broken",
       "category": "Entertainment"
     },
     {
@@ -2957,7 +2948,7 @@
       "slug": "kumari-tv",
       "url": "https://rtmp.applelive.in/gvkumaritv/gvkumaritv/index.m3u8",
       "type": "m3u8",
-      "status": "broken",
+      "status": "working",
       "category": "Entertainment"
     },
     {
@@ -3133,7 +3124,7 @@
       "slug": "harin-tv",
       "url": "https://ipcloud.live/harintv/harintvhd/index.m3u8",
       "type": "m3u8",
-      "status": "broken",
+      "status": "working",
       "category": "Entertainment"
     },
     {
@@ -3141,7 +3132,7 @@
       "slug": "time-tv",
       "url": "https://live.olidigital.in/timetv/timetv/tracks-v1a1/mono.m3u8",
       "type": "m3u8",
-      "status": "broken",
+      "status": "working",
       "category": "Entertainment"
     },
     {
@@ -3293,7 +3284,7 @@
       "slug": "isai-tv",
       "url": "https://server.sscloud7.in/isaihd/isaihd/index.m3u8",
       "type": "m3u8",
-      "status": "broken",
+      "status": "working",
       "category": "Music"
     },
     {
@@ -3333,7 +3324,7 @@
       "slug": "sachin-tv-music",
       "url": "https://ipcloud.live/sachintv/musichd/index.m3u8",
       "type": "m3u8",
-      "status": "broken",
+      "status": "working",
       "category": "Music"
     },
     {
@@ -4011,10 +4002,10 @@
     {
       "name": "Thanthi TV",
       "slug": "custom-thanthi-tv-1779646726592",
-      "url": "https://www.youtube.com/embed/rCra_7vhDlY?si=CSirX8RMVD_PoFLn",
+      "url": "https://www.youtube.com/embed/8kjza8MzPXE?si=jy3ssRQdQHZc-5Iy",
       "type": "embed",
       "custom": true,
-      "status": "working",
+      "status": null,
       "category": "News"
     },
     {
