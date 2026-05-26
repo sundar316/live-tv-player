@@ -664,22 +664,17 @@
         display: block;
       }
       #video-container {
-        position: relative;
         width: 100%;
+
         height: 100%;
-        background: #000;
 
         display: flex;
-        flex-direction: column;
+
+        background: #000;
 
         overflow: hidden;
       }
-      #video-area {
-        flex: 1;
-        position: relative;
-        background: #000;
-        overflow: hidden;
-      }
+
       video,
       #embed-iframe {
         position: absolute;
@@ -1001,93 +996,171 @@
       }
 
       /* ── REMOTE BUTTONS ── */
-      #remote-btns{
+      #remote-btns {
+        display: flex;
 
-    position:absolute;
+        flex-direction: column;
 
-    right:14px;
-    top:50%;
+        gap: 10px;
 
-    transform:translateY(-50%);
+        align-items: center;
+      }
 
-    display:flex;
-    flex-direction:column;
+      .remote-btn {
+        width: 42px;
 
-    align-items:center;
-    justify-content:center;
+        height: 42px;
 
-    gap:10px;
+        border-radius: 12px;
 
-    padding:10px 8px;
+        border: none;
 
-    background:rgba(0,0,0,.32);
+        background: rgba(255, 255, 255, 0.08);
 
-    backdrop-filter:blur(10px);
+        color: white;
 
-    border-radius:18px;
+        font-size: 18px;
 
-    z-index:9999;
-}
+        cursor: pointer;
 
-      .remote-btn{
+        transition: 0.2s;
+      }
 
-    width:44px;
-    height:44px;
+      .remote-btn:hover {
+        background: #e63946;
 
-    border-radius:14px;
+        transform: scale(1.08);
+      }
 
-    border:none;
+      #video-area {
+        flex: 1;
 
-    background:rgba(20,20,20,.92);
+        position: relative;
 
-    color:#fff;
+        background: #000;
 
-    font-size:18px;
+        overflow: hidden;
+      }
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+      #category-select {
+        width: 72px;
 
-    cursor:pointer;
+        margin-top: 10px;
 
-    transition:.2s;
-}
+        background: #181818 !important;
 
-.remote-btn:hover{
+        color: #ffffff !important;
 
-    background:#e63946;
+        border: 1px solid rgba(255, 255, 255, 0.15);
 
-    transform:scale(1.06);
-}
+        border-radius: 10px;
 
-#video-area{
-    padding-right:90px;
-    box-sizing:border-box;
-}
+        padding: 8px 6px;
 
-@media(max-width:768px){
+        font-size: 11px;
 
-    #remote-btns{
+        outline: none;
 
-        right:8px;
+        cursor: pointer;
 
-        gap:8px;
+        appearance: none;
 
-        padding:8px 6px;
-    }
+        -webkit-appearance: none;
 
-    .remote-btn{
+        text-align: center;
+      }
 
-        width:38px;
-        height:38px;
+      #category-select option {
+        background: #181818;
 
-        font-size:16px;
-    }
+        color: #ffffff;
+      }
 
-    #video-area{
-        padding-right:74px;
-    }
-}
+      #category-wrapper {
+        margin-top: auto;
+
+        position: relative;
+      }
+
+      #category-btn {
+        width: 46px;
+        height: 46px;
+
+        border: none;
+
+        border-radius: 12px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        color: #fff;
+
+        font-size: 11px;
+
+        cursor: pointer;
+      }
+
+      #category-menu {
+        position: absolute;
+
+        right: 80px;
+
+        bottom: 0;
+
+        width: 190px;
+
+        background: #101010;
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-radius: 16px;
+
+        padding: 10px;
+
+        display: none;
+
+        z-index: 99999;
+
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+      }
+
+      .category-item {
+        padding: 14px 16px;
+
+        border-radius: 12px;
+
+        color: #fff;
+
+        cursor: pointer;
+
+        font-size: 15px;
+
+        margin-bottom: 6px;
+
+        background: rgba(255, 255, 255, 0.04);
+
+        transition: 0.2s;
+      }
+
+      .category-item:hover {
+        background: #e63946;
+      }
+
+      @media (max-width: 768px) {
+        #remote-btns {
+          right: 8px;
+
+          gap: 8px;
+
+          padding: 8px 6px;
+        }
+
+        .remote-btn {
+          width: 38px;
+          height: 38px;
+
+          font-size: 16px;
+        }
+      }
       .remote-btn:focus {
         background: rgba(230, 57, 70, 0.5);
         border-color: var(--accent);
@@ -1143,6 +1216,28 @@
         color: #fff;
         letter-spacing: 1px;
         text-align: center;
+      }
+
+      #side-controls {
+        width: 74px;
+
+        background: #0c0c0c;
+
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 12px 6px;
+
+        gap: 12px;
+
+        flex-shrink: 0;
+
+        position: relative;
       }
 
       /* ── SIDEBAR ── */
@@ -1685,66 +1780,51 @@
             <div class="sidebar-list" id="sidebar-list"></div>
           </div>
         </div>
-        <div id="remote-btns">
-          <button
-            class="remote-btn"
-            onclick="toggleFullScreen()"
-            title="Fullscreen"
-          >
-            ⛶
-          </button>
-          <button
-            class="remote-btn"
-            id="mute-remote"
-            onclick="toggleMute()"
-            title="Mute"
-          >
-            🔊
-          </button>
+        <div id="side-controls">
+          <div id="remote-btns">
+            <button
+              class="remote-btn"
+              onclick="toggleFullScreen()"
+              type="button"
+            >
+              ⛶
+            </button>
 
-          <button
-            class="remote-btn"
-            id="fav-remote-btn"
-            onclick="toggleFavCurrent()"
-            title="Like"
-          >
-            👍
-          </button>
+            <button
+              id="mute-remote"
+              class="remote-btn"
+              onclick="toggleMute()"
+              type="button"
+            >
+              🔊
+            </button>
 
-          <button
-            class="remote-btn"
-            id="dislike-remote-btn"
-            onclick="dislikeCurrentAndSkip()"
-            title="Dislike"
-          >
-            👎
-          </button>
+            <button
+              class="remote-btn"
+              onclick="toggleFavCurrent()"
+              type="button"
+            >
+              👍
+            </button>
 
-          <button
-            class="remote-btn"
-            onclick="toggleSidebar()"
-            title="Channel List"
-          >
-            ☰
-          </button>
+            <button class="remote-btn" onclick="dislikeCurrentAndSkip()">
+              👎
+            </button>
 
-          <button
-            class="remote-btn"
-            onclick="changeChannel(-1)"
-            title="Previous Channel"
-          >
-            ▲
-          </button>
+            <button class="remote-btn" onclick="toggleSidebar()">☰</button>
 
-          <button class="remote-btn" onclick="goHome()" title="Home">⌂</button>
+            <button class="remote-btn" onclick="changeChannel(-1)">▲</button>
 
-          <button
-            class="remote-btn"
-            onclick="changeChannel(1)"
-            title="Next Channel"
-          >
-            ▼
-          </button>
+            <button class="remote-btn" onclick="goHome()">⌂</button>
+
+            <button class="remote-btn" onclick="changeChannel(1)">▼</button>
+          </div>
+
+          <div id="category-wrapper">
+            <button id="category-btn">All</button>
+
+            <div id="category-menu"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1753,6 +1833,7 @@
       // ══════════════════════════════════════════
       //  DATA
       // ══════════════════════════════════════════
+      let categoryFilteredChannels = [];
       const MASTER_JSON_PATH = "tamil_tv_sources.json";
 
       // Embedded fallback with FULLY CATEGORIZED 164 CHANNELS
@@ -3797,11 +3878,11 @@
         await loadChannels();
         setInterval(updateClock, 1000);
         updateClock();
-        setInterval(tickSleep, 1000);
         buildCatBar();
         buildSbCatTabs();
         buildLanding();
         renderGrid();
+        setupCategoryDropdown();
       };
 
       let focusedIndex = 0;
@@ -3809,6 +3890,48 @@
       function getVisibleCards() {
         return [...document.querySelectorAll(".ch-card")];
       }
+
+      // 1. Initialize the dropdown items and clicks
+      function setupCategoryDropdown() {
+        const menu = document.getElementById("category-menu");
+        const btn = document.getElementById("category-btn");
+
+        // Populate the menu using your existing CATEGORIES array
+        menu.innerHTML = CATEGORIES.map(
+          (c) =>
+            `<div class="category-item" onclick="setPlayerCategory('${c}')">${c}</div>`,
+        ).join("");
+
+        // Toggle menu visibility when clicking the button
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          menu.style.display =
+            menu.style.display === "block" ? "none" : "block";
+        });
+
+        // Close the menu if the user clicks anywhere else on the screen
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest("#category-wrapper")) {
+            menu.style.display = "none";
+          }
+        });
+      }
+
+      // 2. Handle clicking a category from the dropdown
+      window.setPlayerCategory = function (cat) {
+        currentCat = cat; // This updates the main global variable
+        document.getElementById("category-btn").textContent = cat;
+        document.getElementById("category-menu").style.display = "none";
+        showToast(`Category set to: ${cat}`);
+
+        // If the current channel doesn't match the new category, skip to one that does
+        if (
+          currentCat !== "All" &&
+          CHANNELS[currentIdx].category !== currentCat
+        ) {
+          changeChannel(1);
+        }
+      };
 
       function updateTVFocus() {
         const cards = getVisibleCards();
@@ -4375,6 +4498,7 @@
           if (vId)
             url = `https://www.youtube.com/embed/${vId}?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&disablekb=1&enablejsapi=1&playsinline=1&rel=0`;
           iframe.src = url;
+          iframe.style.background = "#000";
           hideLoading();
           return;
         }
@@ -4563,15 +4687,17 @@
             "*",
           );
         const icon = isMuted ? "🔇" : "🔊";
-        document.getElementById("mute-badge").textContent = icon;
-        document.getElementById("mute-badge").classList.add("show");
-        document.getElementById("mute-btn").textContent = icon;
-        document.getElementById("mute-remote").textContent = icon;
+        const muteBadge = document.getElementById("mute-badge");
+        const muteBtn = document.getElementById("mute-btn");
+        const muteRemote = document.getElementById("mute-remote");
+        if (muteBadge) {
+          muteBadge.textContent = icon;
+          muteBadge.classList.add("show");
+        }
+        if (muteBtn) muteBtn.textContent = icon;
+        if (muteRemote) muteRemote.textContent = icon;
         clearTimeout(muteTimer);
-        muteTimer = setTimeout(
-          () => document.getElementById("mute-badge").classList.remove("show"),
-          1400,
-        );
+        muteTimer = setTimeout(() => muteBadge?.classList.remove("show"), 1400);
         showUI();
       }
 
@@ -4624,12 +4750,12 @@
       //  CHANNEL NAVIGATION
       // ══════════════════════════════════════════
       function changeChannel(dir) {
-        if (document.activeElement) document.activeElement.blur(); // Unfocus next/prev buttons
+        if (document.activeElement) document.activeElement.blur(); // Unfocus buttons
         clearTimeout(window._skipTimeout);
         let next = (currentIdx + dir + CHANNELS.length) % CHANNELS.length,
           tries = 0;
 
-        // Skip broken, hidden, missing URLs, AND ensure category match
+        // Skip broken, hidden, missing URLs, AND ensure category match from dropdown
         while (
           (CHANNELS[next].status === "broken" ||
             failedSlugs.includes(CHANNELS[next].slug) ||
@@ -4673,7 +4799,7 @@
         tabs.innerHTML = ["All", ...CATEGORIES.filter((c) => c !== "All")]
           .map(
             (c) =>
-              `<button class="sb-cat ${c === currentSbCat ? "active" : ""}" onclick="setSbCat('${c}')">${CAT_ICONS[c] || ""} ${c}</button>`,
+              `<button type="button" class="sb-cat ${c === currentSbCat ? "active" : ""}" onclick="setSbCat('${c}')">${CAT_ICONS[c] || ""} ${c}</button>`,
           )
           .join("");
       }
@@ -4771,11 +4897,18 @@
         showToast(ch.fav ? "❤ Added to favourites" : "Removed from favourites");
         showUI();
       }
+      function isFav(slug) {
+        const ch = CHANNELS.find((c) => c.slug === slug);
+        return ch && ch.fav === true;
+      }
       function updateFavBtns() {
         if (!CHANNELS[currentIdx]) return;
-        const f = CHANNELS[currentIdx].fav === true;
-        document.getElementById("fav-topbar-btn").textContent = f ? "❤" : "♡";
-        document.getElementById("fav-remote-btn").textContent = f ? "❤" : "♡";
+        const ch = CHANNELS[currentIdx];
+        const favBtn = document.getElementById("fav-topbar-btn");
+
+        if (favBtn) {
+          favBtn.textContent = ch.fav === true ? "❤" : "🤍";
+        }
       }
 
       // ══════════════════════════════════════════
@@ -5011,7 +5144,6 @@
         document.getElementById("sleep-countdown").textContent =
           `⏱ ${m}:${s.toString().padStart(2, "0")}`;
       }
-      function tickSleep() {} // handled by setInterval
       function sleepOff() {
         stopStream();
         document.getElementById("player-view").classList.remove("active");
