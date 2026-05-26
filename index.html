@@ -460,15 +460,13 @@ async function loadChannels() {
     const res = await fetch(MASTER_JSON_PATH + '?t=' + Date.now());
     if (res.ok) {
       const data = await res.json();
-      // FIX: If it's the segmented object, pull the full list from 'all_raw'
-      // If it's a standard array, use it directly.
+      // FIX: Check if it's the new segmented JSON or the old standard array
       base = Array.isArray(data) ? data : (data.all_raw || EMBEDDED_CHANNELS);
     }
-  } catch(e) { console.error("Error loading JSON:", e); }
+  } catch(e) { /* use embedded */ }
 
-  // Now base is guaranteed to be an array, so .filter() will work
+  // Apply local edits
   CHANNELS = base.filter(c => !localChanges.deleted.includes(c.slug));
-  
   localChanges.edited.forEach(ed => {
     const i = CHANNELS.findIndex(c => c.slug === ed.slug);
     if (i !== -1) CHANNELS[i] = ed; else CHANNELS.push(ed);
@@ -477,6 +475,7 @@ async function loadChannels() {
     if (!CHANNELS.some(c => c.slug === a.slug)) CHANNELS.push(a);
   });
 
+  // Restore statuses from last scan
   const savedStatuses = JSON.parse(localStorage.getItem('tltv_statuses') || '{}');
   CHANNELS.forEach(ch => {
     if (savedStatuses[ch.slug]) ch.status = savedStatuses[ch.slug];
